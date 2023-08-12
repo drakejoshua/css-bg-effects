@@ -1,3 +1,7 @@
+/* 
+    the main concept is using the clip-path property to clip the element outlining the border
+*/
+
 * {
     box-sizing: border-box;
 }
