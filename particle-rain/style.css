@@ -1,0 +1,92 @@
+/* 
+    the main concept is creating absolutely-positioned box with a low width, an high height and linear
+    gradient( with from bg-color to normal color ) to simulate a rain drop.
+    then animating them with short,different durations and delays( duration < delay ) to simulate a falling effect
+    
+    [!]: here i used css instead of js coz of simplicity but js can be used to make more random values 
+        that make it more realistic/smoother
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    font-size: 96px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+span {
+    z-index: -1;
+    width: 5px;
+    height: 200px;
+    background-image: linear-gradient( to bottom, black , white );
+    position: absolute;
+    left: 10vw;
+    border-radius: 0px 0px 10px 20px;
+    animation: fall linear infinite;
+    animation-direction: backwards;
+}
+
+
+span:nth-of-type( 2n+1 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(2, 183, 255) );
+    left: 30vw;
+    animation-delay: -3s;
+    animation-duration: 2s;
+}
+span:nth-of-type( 2n+2 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(2, 255, 15) );
+    left: 50vw;
+    animation-delay: -5s;
+    animation-duration: 3s;
+}
+span:nth-of-type( 2n+3 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(247, 2, 255) );
+    left: 70vw;
+    animation-delay: -3s;
+    animation-duration: 1s;
+}
+span:nth-of-type( 2n+4 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(255, 2, 2) );
+    left: 20vw;
+    animation-delay: -8s;
+    animation-duration: 4s;
+}
+span:nth-of-type( 2n+5 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(27, 2, 255) );
+    left: 90vw;
+    animation-delay: -5.5s;
+    animation-duration: 3s;
+}
+span:nth-of-type( 2n+6 )
+{
+    background-image: linear-gradient( to bottom, black , rgb(200, 255, 2) );
+    left: 65vw;
+    animation-delay: -4.5s;
+    animation-duration: 2s;
+}
+
+
+@keyframes fall {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: calc( 100vh + 200px );
+    }
+}
