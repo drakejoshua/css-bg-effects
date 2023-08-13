@@ -1,0 +1,46 @@
+/* 
+    the main concept here is using an absolutely-positioned element as an image banner
+    then animating that banner by scaling it to very small magnified version of itself( like < 1.2x )
+*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+
+div.banner {
+    background-image: url(./banner-img.jpg);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    animation: zoom 12s linear 10ms 1 forwards;
+    z-index: -1;
+}
+h2 {
+    color: white;
+    font-size: 96px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    margin: 0px;
+}
+
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
