@@ -1,0 +1,28 @@
+/* 
+    the main concept is using the clip-path property to clip the element outlining the border
+*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+section {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient( to right, red, blue );
+    transform: scaleY(-1);
+    animation: wavy 3s linear infinite;
+}
+
+@keyframes wavy {
+    0%, 100% {
+        clip-path: polygon(0 57%, 7% 65%, 16% 73%, 27% 73%, 34% 70%, 40% 65%, 49% 61%, 61% 59%, 69% 61%, 76% 65%, 83% 71%, 90% 76%, 96% 81%, 100% 78%, 100% 100%, 0 100%);
+    }
+    
+    50% {
+        clip-path: polygon(0 64%, 6% 61%, 13% 56%, 23% 56%, 32% 59%, 41% 67%, 48% 73%, 58% 77%, 66% 76%, 73% 73%, 79% 67%, 85% 63%, 93% 60%, 100% 67%, 100% 100%, 0 100%);
+    }
+}
