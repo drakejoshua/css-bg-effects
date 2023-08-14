@@ -1,7 +1,7 @@
 /* 
     the main concept is creating absolutely-positioned box with a low width, an high height and linear
     gradient( with from bg-color to normal color ) to simulate a rain drop.
-    then animating them with short,different durations and delays( duration < delay ) to simulate a falling effect
+    then animating them with short,different durations and delays( duration < delay ) to simulate a distorted falling effect
     
     [!]: here i used css instead of js coz of simplicity but js can be used to make more random values 
         that make it more realistic/smoother
