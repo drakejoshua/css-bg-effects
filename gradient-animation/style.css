@@ -1,0 +1,45 @@
+/* 
+    the main concept here is using a linear( or any gradient ) as the background-image
+    of an element, setting the fake gradient to a large background-size and then animating the
+    background-position of the image
+
+    the animation occurs in this way mostly because the background-image is a discrete property
+    ( fixed in value and not continuous ) so animating it will be jaggy but the background-position
+    is a continuous value and animating it is far smoother
+
+    [!]: you can use this technique for animating moving patterned backgrounds also
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+body > div {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient( 45deg, red, blue, orange);
+    background-size: 1000%;
+    background-position: 0% 0%;
+    animation: move-gradient 10s ease-in-out infinite;
+    display: grid;
+    place-items: center;
+}
+div > h1 {
+    color: white;
+    font-size: 96px;
+    text-transform: capitalize;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes move-gradient {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
